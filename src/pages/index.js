@@ -48,6 +48,7 @@ const IndexPage = () => {
     <Wrapper>
       <audio autoPlay loop>
         <source src={Song} />
+        <track kind="captions" srcLang="en" label="English" />
       </audio>
       <Title />
       <Greeting />
@@ -64,7 +65,7 @@ const IndexPage = () => {
           textAlign: "center",
         }}
       >
-        Copyright © 2022 Shin Jooyoung
+        연락처 ✆ +82 10-8224-8693
       </Footer>
     </Wrapper>
   );

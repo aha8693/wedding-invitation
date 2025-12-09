@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { Divider } from "antd";
 import styled from "styled-components";
 import Flower from "../assets/flower2.png";
@@ -41,24 +41,19 @@ const Map = styled.div`
 `;
 
 const Location = () => {
-  // 카카오 맵 불러오기
-
-  // <!-- 3. 실행 스크립트 -->
-  const executeScript = () => {
+  const executeScript = useCallback(() => {
     const scriptTag = document.createElement("script");
     const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1652464367301",
-    "key" : "2a8fe",
+    "timestamp" : "1765241036938",
+    "key" : "dxhiafh683o",
     "mapWidth" : "640",
     "mapHeight" : "360"
   }).render();`);
     scriptTag.appendChild(inlineScript);
     document.body.appendChild(scriptTag);
-  };
+  }, []);
 
-  // <!-- 2. 설치 스크립트 * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다. -->
-  // document.write 문제가 발생해서 해당 파일을 직접 가져온다음 수정했음
-  const InstallScript = () => {
+  const InstallScript = useCallback(() => {
     (function () {
       let c = window.location.protocol === "https:" ? "https:" : "http:";
       let a = "16137cec";
@@ -78,7 +73,6 @@ const Location = () => {
         a +
         "/roughmapLander.js";
 
-      // document.write -> doumnet.body.append로 수정
       const scriptTag = document.createElement("script");
       scriptTag.src = b;
       document.body.append(scriptTag);
@@ -86,7 +80,7 @@ const Location = () => {
         executeScript();
       };
     })();
-  };
+  }, [executeScript]);
 
   useEffect(() => {
     InstallScript();
@@ -99,27 +93,15 @@ const Location = () => {
       </Divider>
       <Image src={Flower} />
       <Map
-        id="daumRoughmapContainer1652464367301"
+        id="daumRoughmapContainer1765241036938"
         className="root_daum_roughmap root_daum_roughmap_landing"
       ></Map>
       <Content>
-        대구 수성구 두산동 888-2번지
+        제주특별자치도 제주시 한북로 154
         <br />
-        호텔수성 수성스퀘어 3층 피오니홀
-        <br />
-        <br />
-        <Title>버스 이용시</Title>
+        헤리스가든 ㅇ층 ㅇㅇ홀
         <br />
         <br />
-        410-1, 401 호텔수성 앞 하차
-        <br />
-        수성1-1, 수성3-1, 814 TBC방송국 앞 하차
-        <br />
-        <br />
-        <Title>지하철 이용시</Title>
-        <br />
-        <br />
-        3호선 수성못역 하차 (도보 10분)
       </Content>
     </Wrapper>
   );

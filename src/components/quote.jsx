@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   padding-top: 42px;
   padding-left: 42px;
   padding-right: 42px;
+  padding-bottom: 42px;
   width: 100%;
   overflow: hidden;
   margin: 0 auto;
@@ -39,14 +40,14 @@ const Quote = () => {
     <Wrapper>
       <Image src={Flower} data-aos="fade-up" />
       <Content data-aos="fade-up">
-        장담하건대. 세상이 다 겨울이어도
+        "그런즉 믿음, 소망, 사랑
         <br />
-        우리 사랑은 늘봄처럼 따뜻하고
+        이 세 가지는 항상 있을 것인데
         <br />
-        간혹, 여름처럼 뜨거울 겁니다
+        그 중에 제일은 사랑이라"
         <br />
         <br />
-        - 이수동, (사랑가) -
+        고린도전서 (1Corinthians) 13:13
         <br />
         <br />
       </Content>

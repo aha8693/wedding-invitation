@@ -13,35 +13,75 @@ import Flower from "../assets/flower1.png";
 
 const Wrapper = styled.div`
   padding-top: 42px;
+  padding-bottom: 42px;
   margin: 0 auto;
   width: 70%;
+
+  @media (max-width: 768px) {
+    width: 85%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 `;
 
 const Title = styled.p`
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--title-color);
   font-weight: bold;
   opacity: 0.85;
   margin-bottom: 0;
   text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const Content = styled.p`
-  font-size: 0.72rem;
+  font-size: 1rem;
   line-height: 1.75;
   opacity: 0.75;
   margin-bottom: 16px;
   width: 100%;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
 `;
 
 const GroomBride = styled.p`
-  font-size: 0.875rem;
+  padding-top: 42px;
+  font-size: 1.2rem;
   line-height: 1.75;
   opacity: 0.85;
   margin-bottom: 0px;
   width: 100%;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding-top: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    padding-top: 24px;
+    line-height: 1.6;
+  }
 `;
 
 const Image = styled.img`
@@ -49,6 +89,16 @@ const Image = styled.img`
   margin: 0 auto;
   width: 1.375rem;
   padding-bottom: 42px;
+
+  @media (max-width: 768px) {
+    width: 1.25rem;
+    padding-bottom: 32px;
+  }
+
+  @media (max-width: 480px) {
+    width: 1.125rem;
+    padding-bottom: 24px;
+  }
 `;
 
 const Greeting = () => {

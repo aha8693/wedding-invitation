@@ -8,9 +8,7 @@ import {
   GROOM_NAME,
   GROOM_ACCOUNT_NUMBER,
   GROOM_FATHER_NAME,
-  GROOM_FATHER_ACCOUNT_NUMBER,
   GROOM_MOTHER_NAME,
-  GROOM_MOTHER_ACCOUNT_NUMBER,
   BRIDE_NAME,
   BRIDE_ACCOUNT_NUMBER,
   BRIDE_FATHER_NAME,
@@ -25,6 +23,17 @@ const Wrapper = styled.div`
   width: 70%;
   margin: 0 auto;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 85%;
+    padding-top: 32px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    padding-top: 24px;
+    padding-bottom: 12px;
+  }
 `;
 
 const Title = styled.p`
@@ -33,6 +42,10 @@ const Title = styled.p`
   font-weight: bold;
   opacity: 0.85;
   margin-bottom: 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const Content = styled.p`
@@ -40,6 +53,17 @@ const Content = styled.p`
   line-height: 1.75;
   opacity: 0.75;
   margin-bottom: 42px;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
 `;
 
 const SubContent = styled.p`
@@ -47,6 +71,17 @@ const SubContent = styled.p`
   line-height: 1.75;
   opacity: 0.75;
   margin-bottom: 42px;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
 `;
 
 const Description = styled.p`
@@ -62,11 +97,32 @@ const ButtonWrap = styled.div`
   flex-direction: row;
   justify-content: center;
   text-align: center;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2.5rem;
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 1.875rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 `;
 const ContactButton = styled.div`
   width: 10.75rem;
   border: 1px solid #efddde;
   padding: 2.188rem 0;
+
+  @media (max-width: 768px) {
+    width: 9.5rem;
+    padding: 1.875rem 0;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
 `;
 
 const Image = styled.img`
@@ -74,6 +130,16 @@ const Image = styled.img`
   margin: 0 auto;
   width: 1.375rem;
   padding-bottom: 42px;
+
+  @media (max-width: 768px) {
+    width: 1.25rem;
+    padding-bottom: 32px;
+  }
+
+  @media (max-width: 480px) {
+    width: 1.125rem;
+    padding-bottom: 24px;
+  }
 `;
 
 const CongratulatoryMoney = () => {
@@ -126,28 +192,10 @@ const CongratulatoryMoney = () => {
         <div>
           <b>부 : {GROOM_FATHER_NAME}</b>
           <Divider type="vertical" />
-          <CopyToClipboard text={GROOM_FATHER_ACCOUNT_NUMBER}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("계좌번호가 복사되었습니다.")}
-            >
-              {GROOM_FATHER_ACCOUNT_NUMBER}
-            </Button>
-          </CopyToClipboard>
         </div>
         <div style={{ marginTop: 24, marginBottom: 24 }}>
           <b>모 : {GROOM_MOTHER_NAME}</b>
           <Divider type="vertical" />
-          <CopyToClipboard text={GROOM_MOTHER_ACCOUNT_NUMBER}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("계좌번호가 복사되었습니다.")}
-            >
-              {GROOM_MOTHER_ACCOUNT_NUMBER}
-            </Button>
-          </CopyToClipboard>
         </div>
         <div>
           <b>신랑 {GROOM_NAME}</b>

@@ -53,9 +53,9 @@ const IndexPage = () => {
       <Title />
       <Greeting />
       <Gallery />
-      <Location />
+      {/* <Location /> */}
       <Quote />
-      <CongratulatoryMoney />
+      {/* <CongratulatoryMoney /> */}
       <Share />
       <Footer
         style={{
@@ -65,7 +65,7 @@ const IndexPage = () => {
           textAlign: "center",
         }}
       >
-        연락처 ✆ +82 10-8224-8693
+        연락처 ✆ +1 410-340-4491 (신랑) / +1 667-770-4652 (신부)
       </Footer>
     </Wrapper>
   );

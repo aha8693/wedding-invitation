@@ -68,3 +68,8 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* Remove focus outlines from video elements */
+video:focus {
+  outline: none;
+}

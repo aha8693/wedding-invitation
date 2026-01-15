@@ -8,6 +8,7 @@ import {
   BRIDE_NAME,
 } from "../../config.js";
 import BackgroundVideo from "../assets/BackgroundVideo.mp4";
+import titleVideo from "../assets/titleVideo.mp4";
 
 const Layout = styled.div`
   width: 70%;
@@ -67,7 +68,7 @@ const Title = () => {
         </Schedule>
       </TitleWrapper>
       <VideoBackground autoPlay loop muted playsInline={true}>
-        <source src={BackgroundVideo} type="video/mp4" />
+        <source src={titleVideo} type="video/mp4" />
       </VideoBackground>
     </Layout>
   );

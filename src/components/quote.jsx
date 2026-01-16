@@ -17,6 +17,7 @@ const Wrapper = styled.div`
 const Content = styled.span`
   display: block;
   margin: 0 auto;
+  margin-bottom: 42px;
   font-size: 1.3rem;
   font-family: "mom_to_daughter";
   text-align: center;
@@ -51,6 +52,7 @@ const Quote = () => {
         <br />
         <br />
       </Content>
+      <Image src={Flower} data-aos="fade-up" />
     </Wrapper>
   );
 };

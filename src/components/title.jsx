@@ -7,8 +7,7 @@ import {
   GROOM_NAME,
   BRIDE_NAME,
 } from "../../config.js";
-import BackgroundVideo from "../assets/BackgroundVideo.mp4";
-import titleVideo from "../assets/titleVideo.mp4";
+import titleVideoSquare from "../assets/titleVideoSquare.mp4";
 
 const Layout = styled.div`
   width: 70%;
@@ -43,6 +42,10 @@ const GroomBride = styled.p`
   font-weight: bold;
   opacity: 0.9;
   margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
 `;
 
 const Schedule = styled.p`
@@ -54,22 +57,23 @@ const Title = () => {
   return (
     <Layout>
       <TitleWrapper>
+        <VideoBackground autoPlay loop muted playsInline={true}>
+          <source src={titleVideoSquare} type="video/mp4" />
+        </VideoBackground>
+        <br /> <br />
         <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
         <GroomBride>
           {GROOM_NAME} &#38; {BRIDE_NAME}
         </GroomBride>
-        <Schedule>
+        {/* <Schedule>
           {WEDDING_DATE}
           <br />
           {WEDDING_TIME}
           <br />
           <br />
           {WEDDING_LOCATION}
-        </Schedule>
+        </Schedule> */}
       </TitleWrapper>
-      <VideoBackground autoPlay loop muted playsInline={true}>
-        <source src={titleVideo} type="video/mp4" />
-      </VideoBackground>
     </Layout>
   );
 };

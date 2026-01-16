@@ -101,7 +101,39 @@ const Image = styled.img`
   }
 `;
 
+const ScrollButton = styled.button`
+  display: block;
+  margin: 0 auto;
+  padding: 12px 24px;
+  background-color: var(--title-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+
+  &:hover {
+    background-color: #c26b6f;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+  }
+`;
+
 const Greeting = () => {
+  const scrollToEventOrder = () => {
+    const element = document.getElementById("event-order");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Wrapper>
       <Divider style={{ marginTop: 32, marginBottom: 32 }} plain>
@@ -124,6 +156,9 @@ const Greeting = () => {
         <br />
         <br />
       </Content>
+      <ScrollButton onClick={scrollToEventOrder} data-aos="fade-up">
+        View Event Schedule
+      </ScrollButton>
       {/* <GroomBride data-aos="fade-up">
         {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 장남 {GROOM_NAME}
         <br />

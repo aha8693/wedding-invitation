@@ -1,4 +1,5 @@
-export const WEDDING_INVITATION_URL = "http://localhost:8000/";
+export const WEDDING_INVITATION_URL =
+  "https://anna-seong-wedding-invitation.netlify.app/";
 
 export const WEDDING_DATE = "January 24, 2026";
 export const WEDDING_TIME = "11:00 A.M.";

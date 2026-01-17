@@ -47,7 +47,7 @@ const IndexPage = () => {
   });
   return (
     <Wrapper>
-      <audio autoPlay loop>
+      <audio controls loop>
         <source src={Song} />
         <track kind="captions" srcLang="en" label="English" />
       </audio>

@@ -3,13 +3,13 @@ import ImageGallery from "react-image-gallery";
 import { Divider } from "antd";
 import styled from "styled-components";
 
-import GalleryPhoto1 from "../assets/IMG_4396.webp";
-import GalleryPhoto2 from "../assets/IMG_4397.webp";
-import GalleryPhoto3 from "../assets/IMG_4398.webp";
-import GalleryPhoto4 from "../assets/Y_53.webp";
-import GalleryPhoto5 from "../assets/IMG_4399.webp";
-import GalleryPhoto6 from "../assets/Y_737.webp";
-import GalleryPhoto7 from "../assets/Y_742.webp";
+const GalleryPhoto1 = "/wedding-invitation/IMG_4396.webp";
+const GalleryPhoto2 = "/wedding-invitation/IMG_4397.webp";
+const GalleryPhoto3 = "/wedding-invitation/IMG_4398.webp";
+const GalleryPhoto4 = "/wedding-invitation/Y_53.webp";
+const GalleryPhoto5 = "/wedding-invitation/IMG_4399.webp";
+const GalleryPhoto6 = "/wedding-invitation/Y_737.webp";
+const GalleryPhoto7 = "/wedding-invitation/Y_742.webp";
 
 const Wrapper = styled.div`
   padding-top: 42px;

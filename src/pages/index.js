@@ -8,13 +8,13 @@ import Greeting from "../components/greeting";
 import Title from "../components/title";
 import "../styles/index.css";
 
-import GroovePaper from "../assets/GroovePaper.png";
+const GroovePaper = "/wedding-invitation/GroovePaper.png";
 import Location from "../components/location";
 import CongratulatoryMoney from "../components/congratulatoryMoney";
 import Share from "../components/share";
 import Quote from "../components/quote";
 import EventOrder from "../components/eventOrder";
-import Song from "../assets/song.mp3";
+const Song = "/wedding-invitation/song.mp3";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -47,7 +47,7 @@ const IndexPage = () => {
   });
   return (
     <Wrapper>
-      <audio autoPlay loop>
+      <audio controls loop>
         <source src={Song} />
         <track kind="captions" srcLang="en" label="English" />
       </audio>

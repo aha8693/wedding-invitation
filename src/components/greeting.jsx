@@ -9,7 +9,7 @@ import {
   BRIDE_FATHER_NAME,
   BRIDE_MOTHER_NAME,
 } from "../../config";
-import Flower from "../assets/flower1.png";
+const Flower = "/wedding-invitation/flower1.png";
 
 const Wrapper = styled.div`
   padding-top: 42px;

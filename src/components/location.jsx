@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
 import { Divider } from "antd";
 import styled from "styled-components";
-import Flower from "../assets/flower2.png";
+const Flower = "/wedding-invitation/flower2.png";
 
 const Wrapper = styled.div`
   padding-top: 42px;

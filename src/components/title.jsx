@@ -7,7 +7,7 @@ import {
   GROOM_NAME,
   BRIDE_NAME,
 } from "../../config.js";
-import titleVideoSquare from "../assets/titleVideoSquare.mp4";
+const titleVideoSquare = "/wedding-invitation/titleVideoSquare.mp4";
 
 const Layout = styled.div`
   width: 70%;

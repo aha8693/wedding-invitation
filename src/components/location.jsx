@@ -1,7 +1,10 @@
 import React, { useEffect, useCallback } from "react";
-import { Divider } from "antd";
+import { withPrefix } from "gatsby";
+import { Divider, message } from "antd";
 import styled from "styled-components";
-const Flower = "/wedding-invitation/flower2.png";
+import { CarOutlined } from "@ant-design/icons";
+
+const Flower = withPrefix("/flower2.png");
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -30,10 +33,59 @@ const Content = styled.p`
   opacity: 0.75;
   width: 100%;
   text-align: center;
-  padding-top: 42px;
-  padding-bottom: 42px;
+  cursor: pointer;
+  margin: 0;
+  transition: transform 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    color: #5f5f5f;
+    opacity: 0.95;
+  }
+
+  &:active {
+    transform: scale(0.985);
+    color: #4f4f4f;
+  }
+`;
+
+const CopyHint = styled.p`
+  font-size: 0.75rem;
+  color: #9a9a9a;
+  text-align: center;
+  margin: 6px 0 20px;
+`;
+
+const SubTitle = styled.p`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  color: var(--title-color);
+  margin: 30px 2px 10px 0;
+`;
+
+const SubContent = styled.p`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  color: #7a7a7a;
   margin: 0;
 `;
+
+const ParkingIcon = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1.6px solid #d97d83;
+  border-radius: 10%;
+  color: #d97d83;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+  margin-right: 8px;
+`;
+
 
 const Map = styled.div`
   width: 100%;
@@ -41,6 +93,26 @@ const Map = styled.div`
 `;
 
 const Location = () => {
+  const addressText = "제주특별자치도 제주시 한북로 154, 헤리스가든 1층 글라스홀";
+
+  const copyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(addressText);
+      message.success("주소가 클립보드에 복사되었습니다.");
+    } catch (error) {
+      const textArea = document.createElement("textarea");
+      textArea.value = addressText;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      message.success("주소가 클립보드에 복사되었습니다.");
+    }
+  };
+
   const executeScript = useCallback(() => {
     const scriptTag = document.createElement("script");
     const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
@@ -92,17 +164,36 @@ const Location = () => {
         <Title>오시는 길</Title>
       </Divider>
       <Image src={Flower} />
+      <Content onClick={copyAddress} title="Click to copy address">
+        제주특별자치도 제주시 한북로 154
+        <br />
+        헤리스가든 1층 글라스홀
+        <br />
+        <br />
+      </Content>
+      <CopyHint>주소를 누르면 복사됩니다.</CopyHint>
       <Map
         id="daumRoughmapContainer1765241036938"
         className="root_daum_roughmap root_daum_roughmap_landing"
       ></Map>
-      <Content>
-        제주특별자치도 제주시 한북로 154
-        <br />
-        헤리스가든 ㅇ층 ㅇㅇ홀
-        <br />
-        <br />
-      </Content>
+
+      <SubTitle>
+        <CarOutlined style={{ marginRight: 8 }} /> 
+        자차
+      </SubTitle>
+      <SubContent>
+        내비게이션: '헤리스 가든' 검색
+        <br /> 제주국제공항에서 차량으로 약 20분 소요{" "}
+      </SubContent>
+
+      <SubTitle>
+        <ParkingIcon>P</ParkingIcon> 
+        주차 안내
+      </SubTitle>
+      <SubContent>
+        TBA
+        <br /> TBA{" "}
+      </SubContent>
     </Wrapper>
   );
 };

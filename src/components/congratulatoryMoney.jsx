@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { withPrefix } from "gatsby";
 import { Button, Divider, message, Modal } from "antd";
 import { CheckCircleTwoTone } from "@ant-design/icons";
 import styled from "styled-components";
 import CopyToClipboard from "react-copy-to-clipboard";
-const Flower = "/wedding-invitation/flower3.png";
 import {
   GROOM_NAME,
   GROOM_ACCOUNT_NUMBER,
@@ -16,6 +16,8 @@ import {
   BRIDE_MOTHER_NAME,
   BRIDE_MOTHER_ACCOUNT_NUMBER,
 } from "../../config";
+
+const Flower = withPrefix("/flower3.png");
 
 const Wrapper = styled.div`
   padding-top: 42px;

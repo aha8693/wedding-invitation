@@ -1,7 +1,8 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import styled from "styled-components";
-const QuotePaper = "/wedding-invitation/Quote.png";
-const Flower = "/wedding-invitation/flower1.png";
+const QuotePaper = withPrefix("/Quote.png");
+const Flower = withPrefix("/flower1.png");
 
 const Wrapper = styled.div`
   padding-top: 42px;

@@ -1,15 +1,16 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import ImageGallery from "react-image-gallery";
 import { Divider } from "antd";
 import styled from "styled-components";
 
-const GalleryPhoto1 = "/wedding-invitation/IMG_4396.webp";
-const GalleryPhoto2 = "/wedding-invitation/IMG_4397.webp";
-const GalleryPhoto3 = "/wedding-invitation/IMG_4398.webp";
-const GalleryPhoto4 = "/wedding-invitation/Y_53.webp";
-const GalleryPhoto5 = "/wedding-invitation/IMG_4399.webp";
-const GalleryPhoto6 = "/wedding-invitation/Y_737.webp";
-const GalleryPhoto7 = "/wedding-invitation/Y_742.webp";
+const GalleryPhoto1 = withPrefix("/IMG_4396.webp");
+const GalleryPhoto2 = withPrefix("/IMG_4397.webp");
+const GalleryPhoto3 = withPrefix("/IMG_4398.webp");
+const GalleryPhoto4 = withPrefix("/Y_53.webp");
+const GalleryPhoto5 = withPrefix("/IMG_4399.webp");
+const GalleryPhoto6 = withPrefix("/Y_737.webp");
+const GalleryPhoto7 = withPrefix("/Y_742.webp");
 
 const Wrapper = styled.div`
   padding-top: 42px;

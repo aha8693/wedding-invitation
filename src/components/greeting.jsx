@@ -1,4 +1,5 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import styled from "styled-components";
 import { Divider } from "antd";
 import {
@@ -9,7 +10,7 @@ import {
   BRIDE_FATHER_NAME,
   BRIDE_MOTHER_NAME,
 } from "../../config";
-const Flower = "/wedding-invitation/flower1.png";
+const Flower = withPrefix("/flower1.png");
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -141,11 +142,6 @@ const Greeting = () => {
       </Divider>
       <Image data-aos="fade-up" src={Flower} />
       <Content data-aos="fade-up">
-        하나님의 때에 서로 만난 두 사람이
-        <br />
-        은혜로 결실을 맺게 되었습니다.
-        <br />
-        <br />
         둘이 하나가 되어 평생 서로를
         <br />
         돕는 배필로 서약하는 자리에
@@ -156,14 +152,11 @@ const Greeting = () => {
         <br />
         <br />
       </Content>
-      <ScrollButton onClick={scrollToEventOrder} data-aos="fade-up">
-        View Event Schedule
-      </ScrollButton>
-      {/* <GroomBride data-aos="fade-up">
+      <GroomBride data-aos="fade-up">
         {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 장남 {GROOM_NAME}
         <br />
         {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}의 장녀 {BRIDE_NAME}
-      </GroomBride> */}
+      </GroomBride>
     </Wrapper>
   );
 };

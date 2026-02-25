@@ -1,5 +1,6 @@
 :root {
   --title-color: #d97d83;
+  --title-subcolor: #e1a6aa;
 }
 * {
   font-family:
@@ -75,8 +76,8 @@
 @font-face {
   font-family: "mom_to_daughter";
   src:
-    url("/wedding-invitation/fonts/mom_to_daughter.woff2") format("woff2"),
-    url("/wedding-invitation/fonts/mom_to_daughter.woff") format("woff");
+    url("/fonts/mom_to_daughter.woff2") format("woff2"),
+    url("/fonts/mom_to_daughter.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -85,4 +86,10 @@
 /* Remove focus outlines from video elements */
 video:focus {
   outline: none;
+}
+
+.image-gallery .image-gallery-left-nav .image-gallery-svg,
+.image-gallery .image-gallery-right-nav .image-gallery-svg {
+  width: 18px !important;
+  height: 18px !important;
 }

@@ -7,7 +7,7 @@ import {
   GROOM_NAME,
   BRIDE_NAME,
 } from "../../config.js";
-const titleVideoSquare = "/wedding-invitation/titleVideoSquare.mp4";
+import titlePhoto from "../assets/MainPoster.png";
 
 const Layout = styled.div`
   width: 70%;
@@ -22,13 +22,9 @@ const TitleWrapper = styled.div`
   font-weight: 500 !important;
   color: var(--title-color);
   animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
-`;
-
-const VideoBackground = styled.video`
-  width: 100%;
+  -moz-animation: fadein 3s;
+  -webkit-animation: fadein 3s;
+  -o-animation: fadein 3s;
 `;
 
 const WeddingInvitation = styled.p`
@@ -53,26 +49,25 @@ const Schedule = styled.p`
   opacity: 0.65;
   margin-bottom: 24px;
 `;
+
 const Title = () => {
   return (
     <Layout>
       <TitleWrapper>
-        <VideoBackground autoPlay loop muted playsInline={true}>
-          <source src={titleVideoSquare} type="video/mp4" />
-        </VideoBackground>
+        <img src={titlePhoto} alt="Title Photo" style={{ width: "100%" }} />
         <br /> <br />
         <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
         <GroomBride>
           {GROOM_NAME} &#38; {BRIDE_NAME}
         </GroomBride>
-        {/* <Schedule>
+        <Schedule>
           {WEDDING_DATE}
           <br />
           {WEDDING_TIME}
           <br />
           <br />
           {WEDDING_LOCATION}
-        </Schedule> */}
+        </Schedule>
       </TitleWrapper>
     </Layout>
   );

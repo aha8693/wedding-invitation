@@ -191,8 +191,7 @@ const Location = () => {
         주차 안내
       </SubTitle>
       <SubContent>
-        TBA
-        <br /> TBA{" "}
+        안내요원이 주차장마다 배치되어 안내 드릴 예정입니다
       </SubContent>
     </Wrapper>
   );

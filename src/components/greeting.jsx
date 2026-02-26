@@ -10,6 +10,8 @@ import {
   BRIDE_FATHER_NAME,
   BRIDE_MOTHER_NAME,
 } from "../../config";
+import gookhwa from "../assets/go1.png";
+
 const Flower = withPrefix("/flower1.png");
 
 const Wrapper = styled.div`
@@ -65,23 +67,29 @@ const Content = styled.p`
 `;
 
 const GroomBride = styled.p`
-  padding-top: 42px;
-  font-size: 1.2rem;
-  line-height: 1.75;
-  opacity: 0.85;
-  margin-bottom: 0px;
+  margin: 28px auto 0;
+  padding: 18px 14px;
   width: 100%;
   text-align: center;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #7d6661;
+  background: rgb(255 255 255 / 56%);
+  border: 1px solid #ead9d6;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgb(133 97 89 / 10%);
 
   @media (max-width: 768px) {
-    font-size: 1rem;
-    padding-top: 32px;
+    font-size: 0.95rem;
+    margin-top: 24px;
+    padding: 16px 12px;
   }
 
   @media (max-width: 480px) {
     font-size: 0.9rem;
-    padding-top: 24px;
-    line-height: 1.6;
+    margin-top: 20px;
+    padding: 14px 10px;
+    line-height: 1.75;
   }
 `;
 
@@ -102,39 +110,15 @@ const Image = styled.img`
   }
 `;
 
-const ScrollButton = styled.button`
-  display: block;
-  margin: 0 auto;
-  padding: 12px 24px;
-  background-color: var(--title-color);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-
-  &:hover {
-    background-color: #c26b6f;
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.8rem;
-    padding: 10px 20px;
-  }
+const GookhwaIcon = styled.img`
+  width: 1.05rem;
+  vertical-align: middle;
+  margin-right: 6px;
+  transform: translateY(-1px);
+  opacity: 0.9;
 `;
 
 const Greeting = () => {
-  const scrollToEventOrder = () => {
-    const element = document.getElementById("event-order");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <Wrapper>
       <Divider style={{ marginTop: 32, marginBottom: 32 }} plain>
@@ -153,6 +137,7 @@ const Greeting = () => {
         <br />
       </Content>
       <GroomBride data-aos="fade-up">
+        <GookhwaIcon src={gookhwa} alt="Flower" />
         {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 장남 {GROOM_NAME}
         <br />
         {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}의 장녀 {BRIDE_NAME}

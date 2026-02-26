@@ -1,16 +1,7 @@
 import React from "react";
-import { withPrefix } from "gatsby";
 import ImageGallery from "react-image-gallery";
 import { Divider } from "antd";
 import styled from "styled-components";
-
-const GalleryPhoto1 = withPrefix("/IMG_4396.webp");
-const GalleryPhoto2 = withPrefix("/IMG_4397.webp");
-const GalleryPhoto3 = withPrefix("/IMG_4398.webp");
-const GalleryPhoto4 = withPrefix("/Y_53.webp");
-const GalleryPhoto5 = withPrefix("/IMG_4399.webp");
-const GalleryPhoto6 = withPrefix("/Y_737.webp");
-const GalleryPhoto7 = withPrefix("/Y_742.webp");
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -27,36 +18,23 @@ const Title = styled.p`
   text-align: center;
 `;
 
-const images = [
-  {
-    original: GalleryPhoto1,
-    thumbnail: GalleryPhoto1,
-  },
-  {
-    original: GalleryPhoto2,
-    thumbnail: GalleryPhoto2,
-  },
-  {
-    original: GalleryPhoto3,
-    thumbnail: GalleryPhoto3,
-  },
-  {
-    original: GalleryPhoto4,
-    thumbnail: GalleryPhoto4,
-  },
-  {
-    original: GalleryPhoto5,
-    thumbnail: GalleryPhoto5,
-  },
-  {
-    original: GalleryPhoto6,
-    thumbnail: GalleryPhoto6,
-  },
-  {
-    original: GalleryPhoto7,
-    thumbnail: GalleryPhoto7,
-  },
-];
+const galleryContext = require.context(
+  "../assets/galleryPhoto",
+  false,
+  /\.(png|jpe?g|webp)$/i
+);
+
+const images = galleryContext
+  .keys()
+  .sort()
+  .map((key) => {
+    const asset = galleryContext(key);
+    const src = asset?.default || asset;
+    return {
+      original: src,
+      thumbnail: src,
+    };
+  });
 
 const Gallery = () => {
   return (

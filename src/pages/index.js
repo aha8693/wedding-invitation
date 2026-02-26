@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { withPrefix } from "gatsby";
 import { Layout } from "antd";
 import styled from "styled-components";
@@ -13,11 +13,13 @@ import CongratulatoryMoney from "../components/congratulatoryMoney";
 import Share from "../components/share";
 import Quote from "../components/quote";
 import EventOrder from "../components/eventOrder";
+import ThankYou from "../components/thankYou";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../styles/index.css";
 
 const GroovePaper = withPrefix("/GroovePaper.png");
+const Song = withPrefix("/song.mp3");
 
 // markup
 const { Footer } = Layout;
@@ -49,6 +51,8 @@ const Wrapper = styled.div`
 `;
 
 const IndexPage = () => {
+  const bgmRef = useRef(null);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.async = true;
@@ -66,9 +70,35 @@ const IndexPage = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const audio = bgmRef.current;
+    if (!audio) return;
+
+    audio.volume = 0.5;
+
+    const tryPlay = () => {
+      audio.play().catch(() => {});
+    };
+
+    tryPlay();
+
+    const unlockAudio = () => {
+      tryPlay();
+    };
+
+    window.addEventListener("pointerdown", unlockAudio, { once: true });
+    window.addEventListener("keydown", unlockAudio, { once: true });
+
+    return () => {
+      window.removeEventListener("pointerdown", unlockAudio);
+      window.removeEventListener("keydown", unlockAudio);
+    };
+  }, []);
+
   return (
     <Page>
       <Wrapper>
+        <audio ref={bgmRef} src={Song} autoPlay loop preload="auto" />
         <Title />
         <Greeting />
         <CoupleIntro />
@@ -76,7 +106,9 @@ const IndexPage = () => {
         <Location />
         <Quote />
         <CongratulatoryMoney />
+        <ThankYou />
         <Share />
+        
 
         <Footer
           style={{

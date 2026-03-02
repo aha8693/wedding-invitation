@@ -1,8 +1,22 @@
 import React from "react";
 import { withPrefix } from "gatsby";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import momToDaughterWoff2 from "../fonts/mom_to_daughter.woff2";
+import momToDaughterWoff from "../fonts/mom_to_daughter.woff";
 const QuotePaper = withPrefix("/Quote.png");
 const Flower = withPrefix("/flower1.png");
+
+const QuoteFontStyle = createGlobalStyle`
+  @font-face {
+    font-family: "mom_to_daughter";
+    src:
+      url(${momToDaughterWoff2}) format("woff2"),
+      url(${momToDaughterWoff}) format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+`;
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -40,6 +54,7 @@ const Image = styled.img`
 const Quote = () => {
   return (
     <Wrapper>
+      <QuoteFontStyle />
       <Image src={Flower} data-aos="fade-up" />
       <Content data-aos="fade-up">
         "그런즉 믿음, 소망, 사랑

@@ -35,7 +35,10 @@ const Content = styled.p`
   text-align: center;
   cursor: pointer;
   margin: 0;
-  transition: transform 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    color 0.18s ease,
+    opacity 0.18s ease;
 
   &:hover {
     transform: scale(1.05);
@@ -86,14 +89,16 @@ const ParkingIcon = styled.span`
   margin-right: 8px;
 `;
 
-
 const Map = styled.div`
   width: 100%;
   padding: 0;
+  overflow: hidden;
 `;
 
 const Location = () => {
-  const addressText = "제주특별자치도 제주시 한북로 154, 헤리스가든 1층 글라스홀";
+  const mapContainerId = "daumRoughmapContainer1765241036938";
+  const addressText =
+    "제주특별자치도 제주시 한북로 154, 헤리스가든 1층 글라스홀";
 
   const copyAddress = async () => {
     try {
@@ -114,21 +119,26 @@ const Location = () => {
   };
 
   const executeScript = useCallback(() => {
+    const container = document.getElementById(mapContainerId);
+    const mapWidth = container
+      ? Math.min(640, Math.floor(container.clientWidth))
+      : 640;
+
     const scriptTag = document.createElement("script");
     const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
     "timestamp" : "1765241036938",
     "key" : "dxhiafh683o",
-    "mapWidth" : "640",
+    "mapWidth" : "${mapWidth}",
     "mapHeight" : "360"
   }).render();`);
     scriptTag.appendChild(inlineScript);
     document.body.appendChild(scriptTag);
-  }, []);
+  }, [mapContainerId]);
 
-  const InstallScript = useCallback(() => {
+  const installScript = useCallback(() => {
     (function () {
-      let c = window.location.protocol === "https:" ? "https:" : "http:";
-      let a = "16137cec";
+      const c = window.location.protocol === "https:" ? "https:" : "http:";
+      const a = "16137cec";
 
       if (window.daum && window.daum.roughmap && window.daum.roughmap.cdn) {
         return;
@@ -139,7 +149,7 @@ const Location = () => {
         URL_KEY_DATA_LOAD_PRE: c + "//t1.daumcdn.net/roughmap/",
         url_protocal: c,
       };
-      let b =
+      const b =
         c +
         "//t1.daumcdn.net/kakaomapweb/place/jscss/roughmap/" +
         a +
@@ -155,8 +165,8 @@ const Location = () => {
   }, [executeScript]);
 
   useEffect(() => {
-    InstallScript();
-  }, [InstallScript]);
+    installScript();
+  }, [installScript]);
 
   return (
     <Wrapper>
@@ -173,12 +183,12 @@ const Location = () => {
       </Content>
       <CopyHint>주소를 누르면 복사됩니다.</CopyHint>
       <Map
-        id="daumRoughmapContainer1765241036938"
+        id={mapContainerId}
         className="root_daum_roughmap root_daum_roughmap_landing"
       ></Map>
 
       <SubTitle>
-        <CarOutlined style={{ marginRight: 8 }} /> 
+        <CarOutlined style={{ marginRight: 8 }} />
         자차
       </SubTitle>
       <SubContent>
@@ -187,7 +197,7 @@ const Location = () => {
       </SubContent>
 
       <SubTitle>
-        <ParkingIcon>P</ParkingIcon> 
+        <ParkingIcon>P</ParkingIcon>
         주차 안내
       </SubTitle>
       <SubContent>

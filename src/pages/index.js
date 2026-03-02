@@ -12,7 +12,6 @@ import Location from "../components/location";
 import CongratulatoryMoney from "../components/congratulatoryMoney";
 import Share from "../components/share";
 import Quote from "../components/quote";
-import EventOrder from "../components/eventOrder";
 import ThankYou from "../components/thankYou";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -20,8 +19,9 @@ import "../styles/index.css";
 
 const GroovePaper = withPrefix("/GroovePaper.png");
 const Song = withPrefix("/song.mp3");
+const SITE_URL = "https://aha8693.github.io/wedding-invitation/";
+const PREVIEW_IMAGE = `${SITE_URL}preview.jpg`;
 
-// markup
 const { Footer } = Layout;
 
 const Page = styled.div`
@@ -108,7 +108,6 @@ const IndexPage = () => {
         <CongratulatoryMoney />
         <ThankYou />
         <Share />
-        
 
         <Footer
           style={{
@@ -126,3 +125,24 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const Head = () => (
+  <>
+    <title>Hyean & Seong Wedding Invitation</title>
+    <meta property="og:title" content="Hyean & Seong Wedding Invitation" />
+    <meta
+      property="og:description"
+      content="May 10, 2026 - Jeju Harris Garden"
+    />
+    <meta property="og:image" content={PREVIEW_IMAGE} />
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hyean & Seong Wedding Invitation" />
+    <meta
+      name="twitter:description"
+      content="May 10, 2026 - Jeju Harris Garden"
+    />
+    <meta name="twitter:image" content={PREVIEW_IMAGE} />
+  </>
+);

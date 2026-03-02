@@ -2,7 +2,7 @@ export const WEDDING_INVITATION_URL =
   "https://anna-seong-wedding-invitation.netlify.app/";
 
 export const WEDDING_DATE = "5월 10일, 2026";
-export const WEDDING_TIME = "오후 3:00";
+export const WEDDING_TIME = "오후 3시 30분";
 export const WEDDING_LOCATION = "제주 헤리스 가든 1F 글라스 홀";
 
 export const GROOM_NAME = "김성태";

@@ -1,5 +1,4 @@
 import React from "react";
-import { withPrefix } from "gatsby";
 import styled from "styled-components";
 import { Divider } from "antd";
 import {
@@ -11,8 +10,9 @@ import {
   GROOM_MOTHER_NAME,
 } from "../../config";
 
-const GroomBabyPhoto = withPrefix("/titlePicture.png");
-const BrideBabyPhoto = withPrefix("/IMG_4396.webp");
+import GroomBabyPhoto from "../assets/groomYoung.jpg";
+import BrideBabyPhoto from "../assets/brideYoung.jpg";
+
 
 const Wrapper = styled.div`
   width: 70%;
@@ -125,7 +125,7 @@ const CoupleIntro = () => {
           <Caption>
             {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}의 딸
             <br />
-            2000년 12월 서울 출생
+            2000년 12월 제주 출생
             <br />
             낚시와 뜨개질을 좋아하는 제주소녀 🍊
           </Caption>

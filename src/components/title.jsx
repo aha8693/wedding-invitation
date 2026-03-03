@@ -28,8 +28,8 @@ const TitleWrapper = styled.div`
 `;
 
 const TitleVideo = styled.video`
-  width: 100%; 
-  `;
+  width: 100%;
+`;
 
 const WeddingInvitation = styled.p`
   font-size: 0.825rem;
@@ -91,10 +91,11 @@ const Cell = styled.div`
 
 const Title = () => {
   return (
+    <>
+    <TitleVideo src={titlePhoto} autoPlay loop muted playsInline={true}></TitleVideo>
+    
     <Layout>
       <TitleWrapper>
-        <TitleVideo src={titlePhoto} autoPlay loop muted playsInline={true}></TitleVideo>
-        <br /> <br />
         <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
         <GroomBride>
           {GROOM_NAME} &#38; {BRIDE_NAME}
@@ -130,6 +131,7 @@ const Title = () => {
         </CalendarWrap>
       </TitleWrapper>
     </Layout>
+    </>
   );
 };
 

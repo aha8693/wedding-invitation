@@ -21,6 +21,7 @@ const GroovePaper = withPrefix("/GroovePaper.png");
 const Song = withPrefix("/song.mp3");
 const SITE_URL = "https://aha8693.github.io/wedding-invitation/";
 const PREVIEW_IMAGE = `${SITE_URL}preview.jpg`;
+const ICON = `${SITE_URL}flower1.png`;
 
 const { Footer } = Layout;
 
@@ -128,6 +129,7 @@ export default IndexPage;
 
 export const Head = () => (
   <>
+    <link rel="icon" type="image/x-icon" href={ICON} />
     <title>Hyean & Seong Wedding Invitation</title>
     <meta property="og:title" content="Hyean & Seong Wedding Invitation" />
     <meta

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { withPrefix } from "gatsby";
 import { Button, Divider, message, Modal } from "antd";
 import { CheckCircleTwoTone } from "@ant-design/icons";
 import styled from "styled-components";
 import CopyToClipboard from "react-copy-to-clipboard";
+import {
+  SectionIntroText,
+  SectionTitle,
+} from "./sectionElements";
 import {
   GROOM_NAME,
   GROOM_ACCOUNT_NUMBER,
@@ -16,8 +19,6 @@ import {
   BRIDE_MOTHER_NAME,
   BRIDE_MOTHER_ACCOUNT_NUMBER,
 } from "../../config";
-
-const Flower = withPrefix("/flower3.png");
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -38,35 +39,8 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.p`
-  font-size: 1rem;
-  color: var(--title-color);
-  font-weight: bold;
-  opacity: 0.85;
-  margin-bottom: 0;
-
-  @media (max-width: 480px) {
-    font-size: 0.85rem;
-  }
-`;
-
-const Content = styled.p`
-  font-size: 0.875rem;
-  line-height: 1.75;
-  opacity: 0.75;
-  margin-bottom: 42px;
-
-  @media (max-width: 768px) {
-    font-size: 0.8rem;
-    margin-bottom: 32px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.75rem;
-    margin-bottom: 24px;
-    line-height: 1.5;
-  }
-`;
+const Title = styled(SectionTitle)``;
+const Content = styled(SectionIntroText)``;
 
 const SubContent = styled.p`
   font-size: 0.875rem;
@@ -127,23 +101,6 @@ const ContactButton = styled.div`
   }
 `;
 
-const Image = styled.img`
-  display: block;
-  margin: 0 auto;
-  width: 1.375rem;
-  padding-bottom: 42px;
-
-  @media (max-width: 768px) {
-    width: 1.25rem;
-    padding-bottom: 32px;
-  }
-
-  @media (max-width: 480px) {
-    width: 1.125rem;
-    padding-bottom: 24px;
-  }
-`;
-
 const CongratulatoryMoney = () => {
   const [groomVisible, setGroomVisible] = useState(false);
   const [brideVisible, setBrideVisible] = useState(false);
@@ -155,11 +112,14 @@ const CongratulatoryMoney = () => {
         plain
         style={{ marginTop: 0, marginBottom: 32 }}
       >
-        <Title>축하의 마음을 전하세요</Title>
+        <Title>마음 전하실 곳</Title>
       </Divider>
-      <Image src={Flower} />
       <Content data-aos="fade-up">
-        축하의 마음을 담아 축의금을 전달해 보세요.
+        참석이 어려우신 분들을 위해
+        <br />
+        계좌번호를 기재하였습니다.
+        <br />
+        너그러운 마음으로 양해 부탁드립니다.
       </Content>
 
       <ButtonWrap>
@@ -225,7 +185,7 @@ const CongratulatoryMoney = () => {
         ]}
       >
         <div>
-          <b>부 : {BRIDE_FATHER_NAME}</b>
+          <b>부 : {BRIDE_FATHER_NAME}{" "}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={BRIDE_FATHER_ACCOUNT_NUMBER}>
             <Button
@@ -238,7 +198,7 @@ const CongratulatoryMoney = () => {
           </CopyToClipboard>
         </div>
         <div style={{ marginTop: 24, marginBottom: 24 }}>
-          <b>모 :{BRIDE_MOTHER_NAME}</b>
+          <b>모 : {BRIDE_MOTHER_NAME}{" "}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={BRIDE_MOTHER_ACCOUNT_NUMBER}>
             <Button

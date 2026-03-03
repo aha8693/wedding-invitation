@@ -19,31 +19,15 @@ const Wrapper = styled.div`
   padding-bottom: 42px;
   margin: 0 auto;
   width: 70%;
-
-  @media (max-width: 768px) {
-    width: 85%;
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
-
-  @media (max-width: 480px) {
-    width: 90%;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
 `;
 
 const Title = styled.p`
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--title-color);
   font-weight: bold;
   opacity: 0.85;
   margin-bottom: 0;
   text-align: center;
-
-  @media (max-width: 480px) {
-    font-size: 0.85rem;
-  }
 `;
 
 const Content = styled.p`
@@ -53,17 +37,6 @@ const Content = styled.p`
   margin-bottom: 16px;
   width: 100%;
   text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
 `;
 
 const GroomBride = styled.p`

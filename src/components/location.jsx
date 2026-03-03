@@ -3,8 +3,13 @@ import { withPrefix } from "gatsby";
 import { Divider, message } from "antd";
 import styled from "styled-components";
 import { CarOutlined } from "@ant-design/icons";
+import {
+  SectionImage,
+  SectionIntroText,
+  SectionTitle,
+} from "./sectionElements";
 
-const Flower = withPrefix("/flower2.png");
+const Flower = withPrefix("/flower1.png");
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -12,29 +17,9 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Title = styled.span`
-  font-size: 1rem;
-  color: var(--title-color);
-  font-weight: bold;
-  opacity: 0.85;
-  margin-bottom: 0;
-`;
-
-const Image = styled.img`
-  display: block;
-  margin: 0 auto;
-  width: 1.375rem;
-  padding-bottom: 42px;
-`;
-
-const Content = styled.p`
-  font-size: 0.875rem;
-  line-height: 1.75;
-  opacity: 0.75;
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-  margin: 0;
+const Title = styled(SectionTitle)``;
+const Image = styled(SectionImage)``;
+const Content = styled(SectionIntroText)`
   transition:
     transform 0.18s ease,
     color 0.18s ease,
@@ -42,13 +27,11 @@ const Content = styled.p`
 
   &:hover {
     transform: scale(1.05);
-    color: #5f5f5f;
     opacity: 0.95;
   }
 
   &:active {
     transform: scale(0.985);
-    color: #4f4f4f;
   }
 `;
 
@@ -171,10 +154,10 @@ const Location = () => {
   return (
     <Wrapper>
       <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
-        <Title>오시는 길</Title>
+        <Title data-aos="fade-up">오시는 길</Title>
       </Divider>
-      <Image src={Flower} />
-      <Content onClick={copyAddress} title="Click to copy address">
+      <Image data-aos="fade-up" src={Flower} />
+      <Content data-aos="fade-up" onClick={copyAddress} title="Click to copy address">
         제주특별자치도 제주시 한북로 154
         <br />
         헤리스가든 1층 글라스홀

@@ -1,6 +1,12 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import styled from "styled-components";
 import { Divider } from "antd";
+import {
+  SectionImage,
+  SectionIntroText,
+  SectionTitle,
+} from "./sectionElements";
 import {
   BRIDE_NAME,
   BRIDE_FATHER_NAME,
@@ -12,7 +18,7 @@ import {
 
 import GroomBabyPhoto from "../assets/groomYoung.jpg";
 import BrideBabyPhoto from "../assets/brideYoung.jpg";
-
+const Flower = withPrefix("/flower2.png");
 
 const Wrapper = styled.div`
   width: 70%;
@@ -21,20 +27,9 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const Title = styled.p`
-  font-size: 1rem;
-  color: var(--title-color);
-  font-weight: bold;
-  opacity: 0.85;
-  margin-bottom: 0;
-`;
-
-const IntroText = styled.p`
-  font-size: 0.9rem;
-  color: #777;
-  line-height: 1.7;
-  margin: 0 0 24px;
-`;
+const Title = styled(SectionTitle)``;
+const IntroText = styled(SectionIntroText)``;
+const Image = styled(SectionImage)``;
 
 const Cards = styled.div`
   display: grid;
@@ -93,13 +88,15 @@ const Caption = styled.p`
 const CoupleIntro = () => {
   return (
     <Wrapper>
-      <Divider style={{ marginTop: 0, marginBottom: 24 }} plain>
-        <Title>우리 이야기</Title>
+      <Divider style={{ marginTop: 32, marginBottom: 32 }} plain>
+        <Title data-aos="fade-up">우리의 이야기</Title>
       </Divider>
-      <IntroText>
+      <Image data-aos="fade-up" src={Flower} />
+      <IntroText data-aos="fade-up">
         서로 다른 시간 속에서 자라난 두 사람이
         <br />
         이제 같은 계절을 함께 걸어가려 합니다.
+        <br />
       </IntroText>
       <Cards>
         <Card>

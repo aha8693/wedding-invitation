@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import momToDaughterWoff2 from "../fonts/mom_to_daughter.woff2";
 import momToDaughterWoff from "../fonts/mom_to_daughter.woff";
 const QuotePaper = withPrefix("/Quote.png");
-const Flower = withPrefix("/flower1.png");
+const Flower = withPrefix("/flower2.png");
 
 const QuoteFontStyle = createGlobalStyle`
   @font-face {
@@ -53,7 +53,7 @@ const Image = styled.img`
 
 const Quote = () => {
   return (
-    <Wrapper>
+    <Wrapper data-aos="fade-up">
       <QuoteFontStyle />
       <Image src={Flower} data-aos="fade-up" />
       <Content data-aos="fade-up">

@@ -44,8 +44,8 @@ const Text = styled.p`
 const ThankYou = () => {
   return (
     <Wrapper>
-      <Text>감사합니다!</Text>
-      <Image src={thankYouImage} alt="Thank You" />
+      <Text data-aos="fade-up">감사합니다!</Text>
+      <Image src={thankYouImage} alt="Thank You" data-aos="fade-up" />
     </Wrapper>
   );
 };

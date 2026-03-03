@@ -1,7 +1,11 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import ImageGallery from "react-image-gallery";
 import { Divider } from "antd";
 import styled from "styled-components";
+import { SectionImage, SectionTitle } from "./sectionElements";
+
+const Flower = withPrefix("/flower3.png");
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -9,20 +13,15 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Title = styled.p`
-  font-size: 1rem;
-  color: var(--title-color);
-  font-weight: bold;
-  opacity: 0.85;
-  margin-bottom: 0;
-  text-align: center;
-`;
+const Title = styled(SectionTitle)``;
 
 const galleryContext = require.context(
   "../assets/galleryPhoto",
   false,
-  /\.(png|jpe?g|webp)$/i
+  /\.(png|jpe?g|webp)$/i,
 );
+
+const Image = styled(SectionImage)``;
 
 const images = galleryContext
   .keys()
@@ -40,8 +39,9 @@ const Gallery = () => {
   return (
     <Wrapper>
       <Divider style={{ marginTop: 0, marginBottom: 32 }} plain>
-        <Title>우리의 아름다운 순간</Title>
+        <Title data-aos="fade-up">우리의 아름다운 순간</Title>
       </Divider>
+      <Image data-aos="fade-up" src={Flower} />
       <ImageGallery
         showPlayButton={false}
         showFullscreenButton={false}

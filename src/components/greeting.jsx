@@ -10,13 +10,13 @@ import {
   BRIDE_FATHER_NAME,
   BRIDE_MOTHER_NAME,
 } from "../../config";
-import gookhwa from "../assets/go1.png";
+import gookhwa from "../assets/flower_black.png";
 
 const Flower = withPrefix("/flower1.png");
 
 const Wrapper = styled.div`
   padding-top: 42px;
-  padding-bottom: 42px;
+  padding-bottom: 62px;
   margin: 0 auto;
   width: 70%;
 `;
@@ -31,7 +31,7 @@ const Title = styled.p`
 `;
 
 const Content = styled.p`
-  font-size: 1rem;
+  font-size: .95rem;
   line-height: 1.75;
   opacity: 0.75;
   margin-bottom: 16px;

@@ -33,5 +33,13 @@ video:focus {
   height: 18px !important;
 }
 
+/* Allow pinch-to-zoom on mobile while keeping gallery swipe. */
+@media (max-width: 768px) {
+  .image-gallery .image-gallery-slides,
+  .image-gallery .image-gallery-swipe {
+    touch-action: pan-y pinch-zoom !important;
+  }
+}
+
 
 

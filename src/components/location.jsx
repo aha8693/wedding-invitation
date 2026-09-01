@@ -3,6 +3,7 @@ import { withPrefix } from "gatsby";
 import { Divider, message } from "antd";
 import styled from "styled-components";
 import { CarOutlined } from "@ant-design/icons";
+import { WEDDING_TIME, WEDDING_LOCATION } from "../../config";
 import {
   SectionImage,
   SectionIntroText,
@@ -19,7 +20,53 @@ const Wrapper = styled.div`
 
 const Title = styled(SectionTitle)``;
 const Image = styled(SectionImage)``;
+
+const DetailsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+`;
+
+const DetailCard = styled.div`
+  padding: 16px 12px;
+  background: rgb(255 255 255 / 74%);
+  border: 1px solid var(--sage-200);
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 7px 20px rgb(11 27 20 / 7%);
+
+  &:first-child {
+    grid-column: 1 / -1;
+    background: linear-gradient(145deg, var(--forest-800), var(--forest-900));
+    border-color: rgb(184 137 196 / 34%);
+  }
+
+  &:first-child span {
+    color: var(--lavender-soft);
+  }
+
+  &:first-child p {
+    color: var(--sage-100);
+  }
+`;
+
+const DetailLabel = styled.span`
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: #80548f;
+`;
+
+const DetailValue = styled.p`
+  margin: 0;
+  color: var(--forest-800);
+  font-size: 0.82rem;
+  line-height: 1.55;
+`;
 const Content = styled(SectionIntroText)`
+  color: var(--muted);
   transition:
     transform 0.18s ease,
     color 0.18s ease,
@@ -37,7 +84,7 @@ const Content = styled(SectionIntroText)`
 
 const CopyHint = styled.p`
   font-size: 0.75rem;
-  color: #9a9a9a;
+  color: var(--muted);
   text-align: center;
   margin: 6px 0 20px;
 `;
@@ -52,7 +99,7 @@ const SubTitle = styled.p`
 const SubContent = styled.p`
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
-  color: #7a7a7a;
+  color: var(--muted);
   margin: 0;
 `;
 
@@ -62,9 +109,9 @@ const ParkingIcon = styled.span`
   justify-content: center;
   width: 18px;
   height: 18px;
-  border: 1.6px solid #d97d83;
+  border: 1.6px solid var(--title-color);
   border-radius: 10%;
-  color: #d97d83;
+  color: var(--title-color);
   font-size: 12px;
   font-weight: 700;
   font-family: Arial, Helvetica, sans-serif;
@@ -81,12 +128,12 @@ const Map = styled.div`
 const Location = () => {
   const mapContainerId = "daumRoughmapContainer1765241036938";
   const addressText =
-    "제주특별자치도 제주시 한북로 154, 헤리스가든 1층 글라스홀";
+    "Harris Garden, Glass Hall 1F, 154 Hanbuk-ro, Jeju-si, Jeju-do";
 
   const copyAddress = async () => {
     try {
       await navigator.clipboard.writeText(addressText);
-      message.success("주소가 클립보드에 복사되었습니다.");
+      message.success("Address copied to the clipboard.");
     } catch (error) {
       const textArea = document.createElement("textarea");
       textArea.value = addressText;
@@ -97,7 +144,7 @@ const Location = () => {
       textArea.select();
       document.execCommand("copy");
       document.body.removeChild(textArea);
-      message.success("주소가 클립보드에 복사되었습니다.");
+      message.success("Address copied to the clipboard.");
     }
   };
 
@@ -154,17 +201,35 @@ const Location = () => {
   return (
     <Wrapper>
       <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
-        <Title data-aos="fade-up">오시는 길</Title>
+        <Title data-aos="fade-up">EVENT DETAILS</Title>
       </Divider>
       <Image data-aos="fade-up" src={Flower} />
+      <DetailsGrid data-aos="fade-up">
+        <DetailCard>
+          <DetailLabel>VENUE</DetailLabel>
+          <DetailValue>{WEDDING_LOCATION}</DetailValue>
+        </DetailCard>
+        <DetailCard>
+          <DetailLabel>TIME</DetailLabel>
+          <DetailValue>{WEDDING_TIME}</DetailValue>
+        </DetailCard>
+        <DetailCard>
+          <DetailLabel>DRESS CODE</DetailLabel>
+          <DetailValue>
+            Dressy casual
+            <br />
+            Polished, comfortable attire
+          </DetailValue>
+        </DetailCard>
+      </DetailsGrid>
       <Content data-aos="fade-up" onClick={copyAddress} title="Click to copy address">
-        제주특별자치도 제주시 한북로 154
+        Harris Garden · Glass Hall, 1F
         <br />
-        헤리스가든 1층 글라스홀
+        154 Hanbuk-ro, Jeju-si, Jeju-do
         <br />
         <br />
       </Content>
-      <CopyHint>주소를 누르면 복사됩니다.</CopyHint>
+      <CopyHint>Tap the address to copy it.</CopyHint>
       <Map
         id={mapContainerId}
         className="root_daum_roughmap root_daum_roughmap_landing"
@@ -172,19 +237,19 @@ const Location = () => {
 
       <SubTitle>
         <CarOutlined style={{ marginRight: 8 }} />
-        자차
+        BY CAR
       </SubTitle>
       <SubContent>
-        내비게이션: '헤리스 가든' 검색
-        <br /> 제주국제공항에서 차량으로 약 20분 소요{" "}
+        Search “Harris Garden” in your navigation app.
+        <br /> About 20 minutes by car from Jeju International Airport.
       </SubContent>
 
       <SubTitle>
         <ParkingIcon>P</ParkingIcon>
-        주차 안내
+        PARKING
       </SubTitle>
       <SubContent>
-        안내요원이 주차장마다 배치되어 안내 드릴 예정입니다
+        Parking attendants will be available to guide you.
       </SubContent>
     </Wrapper>
   );

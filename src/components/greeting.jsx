@@ -2,15 +2,6 @@ import React from "react";
 import { withPrefix } from "gatsby";
 import styled from "styled-components";
 import { Divider } from "antd";
-import {
-  GROOM_NAME,
-  GROOM_FATHER_NAME,
-  GROOM_MOTHER_NAME,
-  BRIDE_NAME,
-  BRIDE_FATHER_NAME,
-  BRIDE_MOTHER_NAME,
-} from "../../config";
-import gookhwa from "../assets/flower_black.png";
 
 const Flower = withPrefix("/flower1.png");
 
@@ -31,40 +22,15 @@ const Title = styled.p`
 `;
 
 const Content = styled.p`
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.75;
-  opacity: 0.75;
+  color: var(--muted);
+  opacity: 0.92;
   margin-bottom: 16px;
   width: 100%;
   text-align: center;
 `;
 
-const GroomBride = styled.p`
-  margin: 28px auto 0;
-  padding: 18px 14px;
-  width: 100%;
-  text-align: center;
-  font-size: 1rem;
-  line-height: 1.9;
-  color: #7d6661;
-  background: rgb(255 255 255 / 56%);
-  border: 1px solid #ead9d6;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgb(133 97 89 / 10%);
-
-  @media (max-width: 768px) {
-    font-size: 0.95rem;
-    margin-top: 24px;
-    padding: 16px 12px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.9rem;
-    margin-top: 20px;
-    padding: 14px 10px;
-    line-height: 1.75;
-  }
-`;
 
 const Image = styled.img`
   display: block;
@@ -83,38 +49,25 @@ const Image = styled.img`
   }
 `;
 
-const GookhwaIcon = styled.img`
-  width: 1.05rem;
-  vertical-align: middle;
-  margin-right: 6px;
-  transform: translateY(-1px);
-  opacity: 0.9;
-`;
-
 const Greeting = () => {
   return (
     <Wrapper>
       <Divider style={{ marginTop: 32, marginBottom: 32 }} plain>
-        <Title data-aos="fade-up">초대합니다</Title>
+        <Title data-aos="fade-up">With Grateful Hearts</Title>
       </Divider>
       <Image data-aos="fade-up" src={Flower} />
       <Content data-aos="fade-up">
-        둘이 하나가 되어 평생 서로를
+        This October,
         <br />
-        돕는 배필로 서약하는 자리에
-        <br /> <br />
-        기도와 축복으로 함께 해주신다면
+        we are bringing together
         <br />
-        더 없는 감사와 기쁨으로 간직하겠습니다.
+        the family and friends we love
+        to give thanks, celebrate our marriage,
+        <br />
+        and share a joyful evening together.
         <br />
         <br />
       </Content>
-      <GroomBride data-aos="fade-up">
-        <GookhwaIcon src={gookhwa} alt="Flower" />
-        {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 장남 {GROOM_NAME}
-        <br />
-        {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}의 장녀 {BRIDE_NAME}
-      </GroomBride>
     </Wrapper>
   );
 };

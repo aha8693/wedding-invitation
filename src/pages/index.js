@@ -2,16 +2,12 @@ import React, { useEffect, useRef } from "react";
 import { withPrefix } from "gatsby";
 import { Layout } from "antd";
 import styled from "styled-components";
-import "react-image-gallery/styles/css/image-gallery.css";
 import "antd/dist/antd.css";
-import Gallery from "../components/gallery";
 import Greeting from "../components/greeting";
 import Title from "../components/title";
-import CoupleIntro from "../components/coupleIntro";
-import Location from "../components/location";
-import CongratulatoryMoney from "../components/congratulatoryMoney";
+import Gallery from "../components/gallery";
+import Rsvp from "../components/rsvp";
 import Share from "../components/share";
-import Quote from "../components/quote";
 import ThankYou from "../components/thankYou";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -28,7 +24,7 @@ const { Footer } = Layout;
 const Page = styled.div`
   min-height: 100vh;
   padding: 24px 0;
-  background: #f3efed;
+  background:hsl(0, 0%, 99%);
 
   @media (max-width: 768px) {
     padding: 0;
@@ -37,7 +33,7 @@ const Page = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background: #efebe9;
+  background: var(--paper);
   background-image: url(${GroovePaper});
   width: 100%;
   max-width: 430px;
@@ -99,27 +95,13 @@ const IndexPage = () => {
   return (
     <Page>
       <Wrapper>
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Background music has no spoken content. */}
         <audio ref={bgmRef} src={Song} autoPlay loop preload="auto" />
         <Title />
         <Greeting />
-        <CoupleIntro />
         <Gallery />
-        <Location />
-        <Quote />
-        <CongratulatoryMoney />
+        <Rsvp />
         <ThankYou />
-        <Share />
-
-        <Footer
-          style={{
-            background: "#D7CCC8",
-            backgroundImage: `url(${GroovePaper})`,
-            opacity: 0.6,
-            textAlign: "center",
-          }}
-        >
-          안혜안 +82 010-8224-8693 (신부)
-        </Footer>
       </Wrapper>
     </Page>
   );
@@ -130,20 +112,26 @@ export default IndexPage;
 export const Head = () => (
   <>
     <link rel="icon" type="image/x-icon" href={ICON} />
-    <title>Hyean & Seong Wedding Invitation</title>
-    <meta property="og:title" content="Hyean & Seong Wedding Invitation" />
+    <title>Seong &amp; Hyean</title>
+    <meta
+      property="og:title"
+      content="Seong & Hyean"
+    />
     <meta
       property="og:description"
-      content="May 10, 2026 - Jeju Harris Garden"
+      content="October 10, 2026"
     />
     <meta property="og:image" content={PREVIEW_IMAGE} />
     <meta property="og:url" content={SITE_URL} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hyean & Seong Wedding Invitation" />
+    <meta
+      name="twitter:title"
+      content="Seong & Hyean"
+    />
     <meta
       name="twitter:description"
-      content="May 10, 2026 - Jeju Harris Garden"
+      content="October 10, 2026"
     />
     <meta name="twitter:image" content={PREVIEW_IMAGE} />
   </>

@@ -1,18 +1,16 @@
-export const WEDDING_INVITATION_URL =
+export const CELEBRATION_INVITATION_URL =
   "aha8693.github.io/wedding-invitation/";
+export const RSVP_PHONE = "+821082248693";
+export const RSVP_DISPLAY_PHONE = "+82 10-8224-8693";
+export const RSVP_SHEET_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbwdQ_wj5B7_f_0wm_Qr7wrk1_P6bH_wxI8XJHYbEGHi5F6nt-SJbw1athFiixwIrYLz/exec";
 
-export const WEDDING_DATE = "5월 10일, 2026";
-export const WEDDING_TIME = "오후 3시 30분";
-export const WEDDING_LOCATION = "제주 헤리스 가든 1F 글라스 홀";
+export const WEDDING_DATE = "October 10, 2026";
+export const WEDDING_TIME = "10:30 AM";
+export const WEDDING_LOCATION = "2941 Fairview Park Dr, Falls Church, VA";
 
-export const GROOM_NAME = "김성태";
-export const GROOM_ACCOUNT_NUMBER = "PayPal https://www.paypal.me/SeongKim156";
-export const GROOM_FATHER_NAME = "김석정";
-export const GROOM_MOTHER_NAME = "김진향";
+export const GROOM_NAME = "Seong";
 
-export const BRIDE_NAME = "안혜안";
-export const BRIDE_ACCOUNT_NUMBER = "하나은행 221-910381-09707";
-export const BRIDE_FATHER_NAME = "안철수";
-export const BRIDE_FATHER_ACCOUNT_NUMBER = "농협은행 901125-52-108689";
-export const BRIDE_MOTHER_NAME = "김희숙";
-export const BRIDE_MOTHER_ACCOUNT_NUMBER = "농협은행 178453-52-019543";
+
+export const BRIDE_NAME = "Hyean";
+

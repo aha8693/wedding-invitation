@@ -1,6 +1,7 @@
 import React from "react";
 import { withPrefix } from "gatsby";
 import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 import { Divider } from "antd";
 import styled from "styled-components";
 import { SectionImage, SectionTitle } from "./sectionElements";
@@ -23,6 +24,28 @@ const galleryContext = require.context(
 
 const Image = styled(SectionImage)``;
 
+const GalleryFrame = styled.div`
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+
+  .image-gallery,
+  .image-gallery-content,
+  .image-gallery-slide-wrapper,
+  .image-gallery-swipe,
+  .image-gallery-slides {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .image-gallery-slide img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+`;
+
 const images = galleryContext
   .keys()
   .sort()
@@ -39,14 +62,16 @@ const Gallery = () => {
   return (
     <Wrapper>
       <Divider style={{ marginTop: 0, marginBottom: 32 }} plain>
-        <Title data-aos="fade-up">우리의 아름다운 순간</Title>
+        <Title data-aos="fade-up">GALLERY</Title>
       </Divider>
       <Image data-aos="fade-up" src={Flower} />
-      <ImageGallery
-        showPlayButton={false}
-        showFullscreenButton={false}
-        items={images}
-      />
+      <GalleryFrame>
+        <ImageGallery
+          showPlayButton={false}
+          showFullscreenButton={false}
+          items={images}
+        />
+      </GalleryFrame>
     </Wrapper>
   );
 };

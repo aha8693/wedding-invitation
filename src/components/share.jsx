@@ -4,7 +4,7 @@ import { Button, message } from "antd";
 import { LinkOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 
-import { WEDDING_INVITATION_URL } from "../../config";
+import { CELEBRATION_INVITATION_URL } from "../../config";
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -27,22 +27,22 @@ const LinkShareButton = styled(Button)`
   align-item: center;
   width: 100%;
   &:hover {
-    background-color: rgb(217 125 131 / 48%) !important;
-    border-color: rgb(217 125 131 / 48%) !important;
+    background-color: rgb(184 137 196 / 18%) !important;
+    border-color: rgb(184 137 196 / 34%) !important;
     color: var(--title-color) !important;
   }
 `;
 const Share = () => {
   return (
     <Wrapper>
-      <CopyToClipboard text={WEDDING_INVITATION_URL}>
+      <CopyToClipboard text={CELEBRATION_INVITATION_URL}>
         <LinkShareButton
           style={{ margin: 0 }}
           icon={<LinkOutlined />}
           size="large"
-          onClick={() => message.success("청첩장 링크가 복사되었습니다.")}
+          onClick={() => message.success("Invitation link copied.")}
         >
-          <Title>청첩장 공유하기</Title>
+          <Title>Share This Invitation</Title>
         </LinkShareButton>
       </CopyToClipboard>
     </Wrapper>

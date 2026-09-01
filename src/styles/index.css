@@ -1,8 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap");
 
 :root {
-  --title-color: #d97d83;
-  --title-subcolor: #e1a6aa;
+  --forest-950: #0b1b14;
+  --forest-900: #14291f;
+  --forest-800: #1f3b2d;
+  --forest-700: #315543;
+  --sage-300: #454844;
+  --sage-100: #798976;
+  --sage-200: #6c8172;
+  --paper: #f2f3ee;
+  --lavender: #cfbbd4;
+  --lavender-soft: #ddc8e5;
+  --lavender-pale: #e6c0ef;
+   --lavender-strong: #b288b5;
+  --ink: #1e3027;
+  --muted: #66766d;
+  --title-color: var(--forest-800);
+  --title-subcolor: var(--lavender);
 }
 * {
   font-family:
@@ -40,6 +54,3 @@ video:focus {
     touch-action: pan-y pinch-zoom !important;
   }
 }
-
-
-

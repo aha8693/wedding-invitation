@@ -13,6 +13,7 @@ export const SectionIntroText = styled.p`
   font-size: 0.9rem;
   line-height: 1.7;
   margin: 0 0 24px;
+  color: var(--muted);
   text-align: center;
 `;
 

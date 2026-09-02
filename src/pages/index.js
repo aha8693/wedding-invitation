@@ -14,7 +14,7 @@ import "aos/dist/aos.css";
 import "../styles/index.css";
 
 const GroovePaper = withPrefix("/GroovePaper.png");
-const Song = withPrefix("/song.mp3");
+const Song = withPrefix("/Nop.mp3");
 const SITE_URL = "https://aha8693.github.io/wedding-invitation/";
 const PREVIEW_IMAGE = `${SITE_URL}preview.jpg`;
 const ICON = `${SITE_URL}flower1.png`;
@@ -24,7 +24,7 @@ const { Footer } = Layout;
 const Page = styled.div`
   min-height: 100vh;
   padding: 24px 0;
-  background:hsl(0, 0%, 99%);
+  background: hsl(0, 0%, 99%);
 
   @media (max-width: 768px) {
     padding: 0;
@@ -113,26 +113,14 @@ export const Head = () => (
   <>
     <link rel="icon" type="image/x-icon" href={ICON} />
     <title>Seong &amp; Hyean</title>
-    <meta
-      property="og:title"
-      content="Seong & Hyean"
-    />
-    <meta
-      property="og:description"
-      content="October 10, 2026"
-    />
+    <meta property="og:title" content="Seong & Hyean" />
+    <meta property="og:description" content="October 10, 2026" />
     <meta property="og:image" content={PREVIEW_IMAGE} />
     <meta property="og:url" content={SITE_URL} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Seong & Hyean"
-    />
-    <meta
-      name="twitter:description"
-      content="October 10, 2026"
-    />
+    <meta name="twitter:title" content="Seong & Hyean" />
+    <meta name="twitter:description" content="October 10, 2026" />
     <meta name="twitter:image" content={PREVIEW_IMAGE} />
   </>
 );

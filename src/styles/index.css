@@ -36,6 +36,18 @@
     "Noto Color Emoji";
 }
 
+
+/* Keep the page scrollable while hiding the browser scrollbar. */
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
 /* Remove focus outlines from video elements */
 video:focus {
   outline: none;

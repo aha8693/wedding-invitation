@@ -5,7 +5,7 @@ import styled from "styled-components";
 import "antd/dist/antd.css";
 import Greeting from "../components/greeting";
 import Title from "../components/title";
-import Gallery from "../components/gallery";
+import CelebrationDetails from "../components/celebrationDetails";
 import Rsvp from "../components/rsvp";
 import Share from "../components/share";
 import ThankYou from "../components/thankYou";
@@ -99,7 +99,7 @@ const IndexPage = () => {
         <audio ref={bgmRef} src={Song} autoPlay loop preload="auto" />
         <Title />
         <Greeting />
-        <Gallery />
+        <CelebrationDetails />
         <Rsvp />
         <ThankYou />
       </Wrapper>

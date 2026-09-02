@@ -8,6 +8,8 @@ export const RSVP_SHEET_ENDPOINT =
 export const WEDDING_DATE = "October 10, 2026";
 export const WEDDING_TIME = "10:30 AM";
 export const WEDDING_LOCATION = "2941 Fairview Park Dr, Falls Church, VA";
+export const PARKING_MAP_URL =
+  "https://maps.app.goo.gl/9TPwebNq69kBjeZS7";
 
 export const GROOM_NAME = "Seong";
 

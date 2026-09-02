@@ -124,18 +124,7 @@ const RsvpButton = styled.a`
   }
 `;
 
-const DressCode = styled.div`
-  padding: 18px 14px;
-  border-radius: 14px;
-  color: var(--sage-100);
-  margin-bottom: 28px;
 
-  & strong {
-    color: var(--lavender-strong);
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-  }
-`;
 
 const Title = () => {
   return (
@@ -178,11 +167,6 @@ const Title = () => {
               </CopyableAddress>
             </CopyToClipboard>
           </Location>
-          <DressCode>
-            <strong>DRESS CODE</strong>
-            <br />
-            Lavender, Green, or Black/Navy
-          </DressCode>
           <RsvpButton href="#rsvp">RSVP</RsvpButton>
         </TitleWrapper>
       </Layout>

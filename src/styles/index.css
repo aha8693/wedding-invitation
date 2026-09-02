@@ -49,6 +49,25 @@ body::-webkit-scrollbar {
   display: none;
 }
 /* Remove focus outlines from video elements */
+
+/* Ant Design sets body to a fixed 100% height. Restore a document-level
+   scroll container so the full invitation can always be reached. */
+html {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
 video:focus {
   outline: none;
 }

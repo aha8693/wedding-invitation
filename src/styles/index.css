@@ -69,6 +69,8 @@ body {
 #___gatsby,
 #gatsby-focus-wrapper {
 video:focus {
+  min-height: 100%;
+}
   outline: none;
 }
 

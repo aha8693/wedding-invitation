@@ -24,11 +24,18 @@ export const RSVP_SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_EXEC_URL";
 
 Then publish the site again with `npm run deploy`.
 
+## Update an existing RSVP script
+
+If your RSVP form is already connected, replace the code in Apps Script with the
+updated `Code.gs`, then select **Deploy → Manage deployments**, click the pencil
+icon, choose **New version**, and click **Deploy**. Your existing `/exec` URL
+will continue to work.
+
 ## Test it
 
-Submit a test RSVP from the invitation. The script will automatically create an
-`RSVP Responses` tab with columns for the submission time, name, attendance,
-meal preference, restrictions, and note.
+Submit a test RSVP from the invitation. The Sheet records the primary guest,
+meal preference, allergies or dietary restrictions, additional adult guests,
+children, high-chair and booster-chair requests, and notes.
 
 ## Important
 

@@ -7,6 +7,7 @@ import Greeting from "../components/greeting";
 import Title from "../components/title";
 import CelebrationDetails from "../components/celebrationDetails";
 import Rsvp from "../components/rsvp";
+import Gallery from "../components/gallery";
 import Share from "../components/share";
 import ThankYou from "../components/thankYou";
 import AOS from "aos";
@@ -100,6 +101,7 @@ const IndexPage = () => {
         <Title />
         <Greeting />
         <CelebrationDetails />
+        <Gallery />
         <Rsvp />
         <ThankYou />
       </Wrapper>

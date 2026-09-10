@@ -39,7 +39,8 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 430px;
   margin: 0 auto;
-  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   box-shadow: 0 12px 40px rgb(0 0 0 / 14%);
 
   @media (max-width: 768px) {
